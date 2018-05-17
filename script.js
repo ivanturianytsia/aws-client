@@ -115,9 +115,6 @@ document.getElementById('profile__file').addEventListener('change', function (ev
     return
   }
   var file = event.target.files[0]
-  var formData = new FormData();
-
-  formData.append('file', file);
   
   var token = window.localStorage.getItem('i-token')
   if (!token) {
@@ -125,10 +122,14 @@ document.getElementById('profile__file').addEventListener('change', function (ev
     return
   }
 
-  fetch('https://f055zf4mrk.execute-api.us-east-1.amazonaws.com/lofino/upload', {
+  // var baseUrl = 'https://f055zf4mrk.execute-api.us-east-1.amazonaws.com/lofino'
+  var baseUrl = 'http://lofino-env.irjzvcqzqp.eu-central-1.elasticbeanstalk.com'
+  // var baseUrl = 'http://localhost:3000'
+  fetch(baseUrl + '/upload', {
     method: 'POST',
-    body: formData,
+    body: file,
     headers: {
+      'Content-Type': 'image/jpeg',
       'Authorization': token
     }
   })
