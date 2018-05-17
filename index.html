@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <title>Lofino Demo Client</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+</head>
+<body>
+
+  <div id="profile">
+    <h3>Welcome, <span id="profile__email"></span>!</h3>
+    <button id="profile__logout">Logout</button>
+
+    <input id="profile__file" type="file">
+
+    <span id="profile__result" style="display: none">Ok!</span>
+  </div>
+
+  <div id="login">
+    <form id="login__form" action="">
+      <h3>Login</h3>
+      <input type="email" id="login__email" placeholder="Email">
+      <input type="password" id="login__password" placeholder="Password">
+      <button id="login__btn">Login</button>
+    </form>
+    <button id="login__to-register">Create an Account</button>
+  </div>
+  
+
+  <div id="register">
+    <form id="register__form" action="">
+      <h3>Register</h3>
+      <input type="email" id="register__email" placeholder="Email">
+      <input type="password" id="register__password" placeholder="Password">
+      <button id="register__btn">Register</button>
+    </form>
+    <button id="register__to-login">Use an existing Account</button>
+  </div>
+  
+
+  <div id="confirm">
+    <form id="confirm__form" action="">
+      <h3>Confirm code</h3>
+      <input type="email" id="confirm__email" placeholder="Email">
+      <input type="password" id="confirm__code" placeholder="Code">
+      <button id="confirm__btn">Confirm</button>
+    </form>
+    <button id="confirm__to-login">Use an existing Account</button>
+  </div>
+
+  <div id="error" style="display: none">
+    <h1>Error!</h1>
+    <p id="error__text"></p>
+  </div>
+  
+  <script src="lib/aws-cognito-sdk.min.js"></script>
+  <script src="lib/amazon-cognito-identity.min.js"></script>
+  <script src="Cognito.js"></script>
+  <script src="script.js"></script>
+</body>
+</html>
